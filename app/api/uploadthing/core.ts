@@ -1,4 +1,4 @@
-mport { currentUser } from "@clerk/nextjs";
+import { currentUser } from "@clerk/nextjs";
 import { createUploadthing, type FileRouter } from "uploadthing/next";
 
 const f = createUploadthing();

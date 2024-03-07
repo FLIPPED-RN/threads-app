@@ -20,7 +20,7 @@ import { ChangeEvent, useState } from "react";
 import { Textarea } from "../ui/textarea";
 import { z } from "zod";
 import { isBase64Image } from "@/lib/utils";
-import { useUploadThing } from '@/lib/uploadthing'
+import { useUploadThing } from '@/lib/validations/uploadthing'
 
 interface Props {
   user: {
@@ -79,7 +79,9 @@ const AccountProfile = ({user, btnTitle}: Props) => {
     if(hasImageChanged) {
       const imgRes = await startUpload(files);
 
-      
+      if(imgRes && imgRes[0].fileUrl){
+        values.profile_photo = imgRes[0].fileUrl;
+      }
     }
   }
 
