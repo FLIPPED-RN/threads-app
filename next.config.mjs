@@ -1,4 +1,33 @@
+import { hostname } from 'os';
+
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
+const nextConfig = {
+  experimental: {
+    serverActions: true,
+    serverComponentsExternalPackages: ["mongoose"],
+  },
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'img.clerk.com'
+      },
+      {
+        protocol: 'https',
+        hostname: 'images.clerk.com'
+      },
+      {
+        protocol: 'https',
+        hostname: 'uploadthing.clerk.com'
+      },
+      {
+        protocol: 'https',
+        hostname: 'placehold.co'
+      },
+    ]
+  }
+};
+
+
 
 export default nextConfig;

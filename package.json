@@ -1,6 +1,6 @@
 {
   "name": "threads-app",
-  "version": "24.0.5",
+  "version": "24.0.15",
   "private": true,
   "scripts": {
     "dev": "next dev",
