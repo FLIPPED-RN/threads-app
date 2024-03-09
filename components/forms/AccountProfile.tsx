@@ -89,13 +89,19 @@ const AccountProfile = ({user, btnTitle}: Props) => {
     }
 
     await updateUser({
-      userId,
-      username: values.username,
       name: values.name,
+      path: pathname,
+      username: values.username,
+      userId: user.id,
       bio: values.bio,
       image: values.profile_photo,
-      path: pathname
     });
+
+    if(pathname === '/profile/edit'){
+      router.back();
+    } else{
+      router.push('/');
+    }
   }
 
   return(
